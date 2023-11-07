@@ -8,6 +8,7 @@
  */
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ int main() {
   int runAmount;
   char userChoice;
   cout << "Choose whether to simulate 1 instance or a number of instances (i or n): ";
-  cin << userChoice;
+  cin >> userChoice;
   if(userChoice == 'i'){
     oneRun = monty_hall();
     if(oneRun == true)
@@ -73,8 +74,8 @@ void simulate(int num_iterations){
       change++;
   }
 
-  double stayPercentage = (stay/gamesPlayed)*10.00;
-  double changePercentage = (change/gamesPlayed)*10.00;
+  double stayPercentage = stay*100.00/gamesPlayed;
+  double changePercentage = change*100.00/gamesPlayed;
   
   cout << "Wins by Staying: " << stay << endl << "Wins by Switching: " << change << endl
        << "Times Played: " << gamesPlayed << endl;
