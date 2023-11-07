@@ -16,7 +16,25 @@ bool monty_hall();
 void simulate(int num_iterations);
 
 int main() {
-  
+  bool oneRun;
+  int runAmount;
+  char userChoice;
+  cout << "Choose whether to simulate 1 instance or a number of instances (i or n): ";
+  cin << userChoice;
+  if(userChoice == 'i'){
+    oneRun = monty_hall();
+    if(oneRun == true)
+      cout << "Win on Stay." << endl;
+    else
+      cout << "Win on Switch." << endl;
+  }
+  else if(userChoice == 'n'){
+    cout << "How many times will you run?: ";
+    cin >> runAmount;
+    simulate(runAmount);
+  }
+  else
+    cout << "invalid" << endl;
   
   return 0;
 }
